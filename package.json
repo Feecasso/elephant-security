@@ -1,0 +1,13 @@
+{
+  "name": "elephant-security",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Elephant Security & Tech Support website",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check script.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
