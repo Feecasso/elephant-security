@@ -2,6 +2,14 @@
 
 A responsive website for an independent IT technician and cybersecurity specialist serving small businesses and home users.
 
+## Live site
+
+Published with GitHub Pages at:
+
+https://feecasso.github.io/elephant-security/
+
+The static frontend is served from the `main` branch root. `.nojekyll` disables Jekyll processing so the CSS, JavaScript, and SVG assets are published as-is.
+
 ## Run locally
 
 ```bash
@@ -14,9 +22,11 @@ The project has no runtime dependencies and requires Node.js 18 or newer.
 
 ## Contact form
 
-Consultation requests are posted to `/api/contact` and stored locally in `data/inquiries.jsonl`. The data file is ignored by Git and is written with restrictive permissions.
+The live GitHub Pages deployment is static and cannot run `server.js` or the `/api/contact` endpoint. The consultation form is therefore disabled and clearly labeled as offline, and no inquiries are collected or transmitted on the live site.
 
-The form does not send email. Before publishing, configure an email notification workflow or another approved delivery process, and ensure the data file is backed up and handled according to the business privacy policy.
+`data/inquiries.jsonl` is ignored by Git and is not deployed.
+
+The local Node server still includes the contact endpoint for future development, but enabling the form requires a hosted backend plus restoring the form controls and submission handler. Do not enable the form in the static deployment without a working backend and an approved data-handling process.
 
 ## Validation
 
@@ -34,6 +44,7 @@ The website intentionally avoids unsupported enterprise claims. It does not adve
 
 ```text
 .
+├── .nojekyll
 ├── assets/elephant-mark.svg
 ├── data/.gitkeep
 ├── index.html

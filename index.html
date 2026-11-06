@@ -15,6 +15,8 @@
       content="Secure Your Technology. Keep Your Business Running. Practical cybersecurity and reliable IT support for small businesses and home users."
     >
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://feecasso.github.io/elephant-security/">
+    <link rel="canonical" href="https://feecasso.github.io/elephant-security/">
     <link rel="icon" href="assets/elephant-mark.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -636,88 +638,100 @@
             </ul>
           </div>
 
-          <form class="contact-form" id="contactForm" action="/api/contact" method="post">
-            <div class="field">
-              <label for="name">Name</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                autocomplete="name"
-                placeholder="Your name"
-                required
-              >
+          <form class="contact-form" id="contactForm" aria-describedby="formUnavailable">
+            <div class="contact-form__offline" id="formUnavailable">
+              <span class="contact-form__offline-label">Form offline</span>
+              <p>
+                This site is hosted as a static GitHub Pages deployment, so
+                online consultation requests are disabled. No inquiry data is
+                collected or transmitted here. The form will return when a
+                hosted form backend is configured.
+              </p>
             </div>
 
-            <div class="field">
-              <label for="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                placeholder="you@example.com"
-                required
-              >
-            </div>
+            <fieldset class="contact-form__fields" disabled>
+              <legend class="visually-hidden">Consultation request form</legend>
 
-            <div class="field">
-              <label for="organization">Organization <span>(optional)</span></label>
-              <input
-                id="organization"
-                name="organization"
-                type="text"
-                autocomplete="organization"
-                placeholder="Business or organization"
-              >
-            </div>
+              <div class="field">
+                <label for="name">Name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Your name"
+                  required
+                >
+              </div>
 
-            <div class="field">
-              <label for="service">Service area</label>
-              <select id="service" name="service" required>
-                <option value="" selected disabled>Select a service area</option>
-                <option value="computer-support">Computer &amp; laptop support</option>
-                <option value="malware-security">Malware removal &amp; computer security</option>
-                <option value="small-business-it">Small business IT support</option>
-                <option value="wifi-network">Wi-Fi &amp; network troubleshooting</option>
-                <option value="backup-data">Backup &amp; data assistance</option>
-                <option value="cybersecurity">Cybersecurity services</option>
-                <option value="managed-it">Optional managed IT services</option>
-                <option value="not-sure">Not sure yet</option>
-              </select>
-            </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  required
+                >
+              </div>
 
-            <div class="field">
-              <label for="message">What do you need help with?</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Describe the devices, software, and issues involved."
-                required
-              ></textarea>
-            </div>
+              <div class="field">
+                <label for="organization">Organization <span>(optional)</span></label>
+                <input
+                  id="organization"
+                  name="organization"
+                  type="text"
+                  autocomplete="organization"
+                  placeholder="Business or organization"
+                >
+              </div>
 
-            <div class="hp-field" aria-hidden="true">
-              <label for="website">Website</label>
-              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
-            </div>
+              <div class="field">
+                <label for="service">Service area</label>
+                <select id="service" name="service" required>
+                  <option value="" selected disabled>Select a service area</option>
+                  <option value="computer-support">Computer &amp; laptop support</option>
+                  <option value="malware-security">Malware removal &amp; computer security</option>
+                  <option value="small-business-it">Small business IT support</option>
+                  <option value="wifi-network">Wi-Fi &amp; network troubleshooting</option>
+                  <option value="backup-data">Backup &amp; data assistance</option>
+                  <option value="cybersecurity">Cybersecurity services</option>
+                  <option value="managed-it">Optional managed IT services</option>
+                  <option value="not-sure">Not sure yet</option>
+                </select>
+              </div>
 
-            <div class="field field--check">
-              <input id="consent" name="consent" type="checkbox" value="yes" required>
-              <label for="consent">
-                I agree that my details will be used to respond to this inquiry.
-              </label>
-            </div>
+              <div class="field">
+                <label for="message">What do you need help with?</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="Describe the devices, software, and issues involved."
+                  required
+                ></textarea>
+              </div>
 
-            <button class="button button--primary contact-form__submit" type="submit">
-              Send request
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z" />
-              </svg>
-            </button>
+              <div class="hp-field" aria-hidden="true">
+                <label for="website">Website</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+              </div>
 
-            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+              <div class="field field--check">
+                <input id="consent" name="consent" type="checkbox" value="yes" required>
+                <label for="consent">
+                  I agree that my details will be used to respond to this inquiry.
+                </label>
+              </div>
+
+              <button class="button button--primary contact-form__submit" type="submit" disabled>
+                Send request
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z" />
+                </svg>
+              </button>
+            </fieldset>
           </form>
         </div>
       </section>

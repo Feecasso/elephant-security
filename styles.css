@@ -1351,6 +1351,63 @@ ol {
   -webkit-backdrop-filter: blur(10px);
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contact-form__offline {
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(244, 114, 182, 0.28);
+  border-radius: var(--radius-sm);
+  background: rgba(244, 114, 182, 0.07);
+}
+
+.contact-form__offline-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--pink);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contact-form__offline p {
+  margin: 0;
+  color: #b8c7e0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.contact-form__fields {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.contact-form__fields:disabled {
+  opacity: 0.55;
+}
+
+.contact-form__fields:disabled input,
+.contact-form__fields:disabled select,
+.contact-form__fields:disabled textarea,
+.contact-form__fields:disabled button {
+  cursor: not-allowed;
+}
+
 .field {
   display: grid;
   gap: 0.42rem;
